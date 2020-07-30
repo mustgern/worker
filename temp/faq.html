@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    #left{
+        float:left;
+        width:55%;
+    }
+
+    #right{
+        float:right;
+        width:45%;
+    }
+
+    #divLeft{
+        text-align:center;
+        float:left;
+        width:45%;
+        margin-right:5%
+    }
+    #divRight{
+        text-align:center;
+        float:right;
+        width:50%;
+    }
+</style>
+
+
+<div id="left">
+        <div class="position-relative overflow-hidden p-2 p-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">FAQ</h1>
+    <p class="lead font-weight-normal">Я готов предоставить услуги по разработке разного вида . Например : разработка сайтов(как backend , так и frontend )
+        софт , скрипты.Предоставляю высокую скорость и разработку на уровне midle</p>
+    <a class="btn btn-outline-secondary" href="/shop/">Связаться</a>
+  </div>
+              </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+        </div>
+</div>
+
+    <div id="right">
+        <div class="position-relative overflow-hidden  p-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Примеры</h1>
+    <div id="divLeft">
+        {% for ex in exemps1 %}
+        <div onmouseover="opens()" style="margin-bottom:20px;border: 2px solid black;">
+            <img width="75px" height="75px" src="/{{ex.page.name}}">
+            <br>
+            {{ex.name}}
+        </div>
+        {%endfor%}
+    </div>
+
+      <div id="divRight">
+          {% for ex in exemps2 %}
+                <div onmouseover="opens()" style="margin-bottom:20px;border: 2px solid black;">
+            <img width="75px" height="75px" src="/{{ex.page.name}}">
+            <br>
+            {{ex.name}}
+        </div>
+          {% endfor %}
+    </div>
+
+</div>
+        </div>
+
+    </div>
+
+<script>
+    function opens(){
+        alert(1)
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding:0 25%">
+{% if stat_reg   %}
+    <div class="alert alert-danger" role="alert"> {{stat_reg}} </div>
+
+
+{% endif %}
+ <form method="post">
+     {% csrf_token %}
+
+
+    <div class="form-group">
+    <label for="exampleInputPassword1">Логин</label>
+    <input name="login"  class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Пароль</label>
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+
+  <button type="submit" class="btn btn-primary">Зарегистрироватся</button>
+</form>
+  </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding:0 25%">
+ <form method="post">
+     {% csrf_token %}
+Новый пароль будет выслан на почту
+<br>
+  <button type="submit" class="btn btn-primary">Выслать</button>
+</form>
+  </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+<div class="jumbotron" style="margin:0   25%">
+  <h1 class="display-4">Логин:{{ user.login }}</h1>
+    <p class="lead"> Балнас:{{ user.balanse }} .Чтобы пополнить счет нужно перевести необходимую сумму на счет 1 с кодом {{code.code}}  в описании после пополения нажмите на кнопку </p>
+    <small>{{err}}</small>
+  <br>
+    <button type="submit" class="btn btn-primary btn-lg"  name="check" >проверить</button>
+  <hr class="my-4">
+
+  <button type="submit" class="btn btn-primary btn-lg"  name="logout" >выйти</button>
+
+</div>
+</form>
+
+{% for acc in accs %}
+<div class="jumbotron" style="margin:0 25%;margin-top:5%">
+    <h4>Аккаунт</h4>
+    <p class="lead">Логин: {{acc.login}}</p>
+    <p class="lead">Пароль:{{acc.password}}</p>
+</div>
+{% endfor %}
+
+{% endblock %}
